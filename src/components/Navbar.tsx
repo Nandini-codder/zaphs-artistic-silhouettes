@@ -40,27 +40,24 @@ const Navbar = ({ isTransparent = false }: NavbarProps) => {
   return (
     <nav className={navClasses}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="font-playfair text-2xl text-zaph-cream tracking-wider">
-          ZAPH
+        <Link to="/" className="font-playfair text-2xl text-zaph-cream tracking-widest relative group overflow-hidden">
+          <span className="relative z-10 group-hover:text-zaph-gold transition-colors duration-500">ZAPH</span>
+          <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-zaph-gold group-hover:w-full transition-all duration-700"></span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-2">
-          <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
-            Home
-          </Link>
-          <Link to="/photography" className={`nav-link ${isActive('/photography') ? 'active' : ''}`}>
-            Photography
-          </Link>
-          <Link to="/sketches" className={`nav-link ${isActive('/sketches') ? 'active' : ''}`}>
-            Sketches
-          </Link>
-          <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>
-            About
-          </Link>
-          <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
-            Contact
-          </Link>
+          {['Home', 'Photography', 'Sketches', 'About', 'Contact'].map((item, index) => (
+            <Link 
+              key={item} 
+              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+              className={`nav-link relative overflow-hidden ${isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`) ? 'active' : ''}`}
+              style={{ transitionDelay: `${index * 50}ms` }}
+            >
+              <span className="relative z-10">{item}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-zaph-gold hover:w-full transition-all duration-500"></span>
+            </Link>
+          ))}
         </div>
 
         {/* Mobile menu button */}
@@ -76,41 +73,22 @@ const Navbar = ({ isTransparent = false }: NavbarProps) => {
       {isMenuOpen && (
         <div className="md:hidden bg-zaph-black/95 backdrop-blur-sm absolute top-full left-0 w-full border-t border-zaph-gray/20 animate-fade-in">
           <div className="flex flex-col py-4">
-            <Link
-              to="/"
-              onClick={() => setIsMenuOpen(false)}
-              className={`nav-link px-6 py-3 ${isActive('/') ? 'active' : ''}`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/photography"
-              onClick={() => setIsMenuOpen(false)}
-              className={`nav-link px-6 py-3 ${isActive('/photography') ? 'active' : ''}`}
-            >
-              Photography
-            </Link>
-            <Link
-              to="/sketches"
-              onClick={() => setIsMenuOpen(false)}
-              className={`nav-link px-6 py-3 ${isActive('/sketches') ? 'active' : ''}`}
-            >
-              Sketches
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsMenuOpen(false)}
-              className={`nav-link px-6 py-3 ${isActive('/about') ? 'active' : ''}`}
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className={`nav-link px-6 py-3 ${isActive('/contact') ? 'active' : ''}`}
-            >
-              Contact
-            </Link>
+            {['Home', 'Photography', 'Sketches', 'About', 'Contact'].map((item, index) => (
+              <Link
+                key={item}
+                to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                onClick={() => setIsMenuOpen(false)}
+                className={`nav-link px-6 py-3 ${isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`) ? 'active' : ''}`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <span className="relative">
+                  {item}
+                  {isActive(item === 'Home' ? '/' : `/${item.toLowerCase()}`) && (
+                    <span className="absolute -bottom-1 left-0 w-8 h-[1px] bg-zaph-gold"></span>
+                  )}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       )}
