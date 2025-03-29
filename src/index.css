@@ -41,6 +41,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-zaph-black text-zaph-cream font-merriweather;
   }
@@ -70,4 +74,142 @@
   .nav-link.active {
     @apply text-zaph-gold;
   }
+  
+  /* Custom Art Effects */
+  .art-reveal {
+    @apply opacity-0;
+    animation: art-reveal 1s forwards;
+  }
+  
+  .split-text .char {
+    @apply opacity-0 inline-block transform translate-y-4;
+    animation: split-reveal 0.5s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+  }
+  
+  .image-reveal {
+    clip-path: inset(0 100% 0 0);
+    animation: image-reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+  
+  .masked-text {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5), 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+}
+
+@keyframes art-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes split-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes image-reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-fade-right {
+  animation: fade-right 1s ease-out;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease-out;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
 }

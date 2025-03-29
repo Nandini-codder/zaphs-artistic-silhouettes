@@ -3,7 +3,11 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const Navbar = () => {
+interface NavbarProps {
+  isTransparent?: boolean;
+}
+
+const Navbar = ({ isTransparent = false }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -29,8 +33,12 @@ const Navbar = () => {
     return false;
   };
 
+  const navClasses = isTransparent && !scrolled
+    ? 'fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-transparent'
+    : `fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-zaph-black/90 backdrop-blur-sm py-2' : 'py-4 bg-zaph-black'}`;
+
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-zaph-black/90 backdrop-blur-sm py-2' : 'py-4'}`}>
+    <nav className={navClasses}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="font-playfair text-2xl text-zaph-cream tracking-wider">
           ZAPH
