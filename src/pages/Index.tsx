@@ -142,7 +142,7 @@ const Index = () => {
         <section className="h-screen relative flex items-center justify-center">
           <div className="absolute inset-0 bg-zaph-black">
             <img 
-              src="/lovable-uploads/cbca9fda-a185-47c7-b5df-37b0ed5d62ed.png" 
+              src="/lovable-uploads/cover.png"
               alt="Fine Art Photography" 
               className="w-full h-full object-cover opacity-40"
               style={{
@@ -231,7 +231,7 @@ const Index = () => {
                   }}
                 >
                   <img 
-                    src="/lovable-uploads/c4fb00dc-60df-45f4-98e7-4c4470d9fee4.png" 
+                    src="/lovable-uploads/set-1/486062794_650411307909313_3849816689233517024_n.jpg"
                     alt="Photography preview" 
                     className="h-full w-full object-cover object-center"
                   />
@@ -244,7 +244,7 @@ const Index = () => {
                   }}
                 >
                   <img 
-                    src="/lovable-uploads/90330d0e-9ef9-4173-a73f-6bb7e7a51986.png" 
+                    src="/lovable-uploads/rando/487122763_1824961904967722_4019071035002266637_n.jpg"
                     alt="Photography preview" 
                     className="h-full w-full object-cover object-center"
                   />
@@ -272,7 +272,7 @@ const Index = () => {
                     }}
                   >
                     <img 
-                      src="/lovable-uploads/e5454670-6faa-4efa-b090-1685b9dbd8e2.png" 
+                      src="/lovable-uploads/sketch/487297929_9455492637877916_2166289416928223757_n.jpg"
                       alt="Sketch preview" 
                       className="h-full w-full object-cover object-center"
                     />
@@ -285,7 +285,7 @@ const Index = () => {
                     }}
                   >
                     <img 
-                      src="/lovable-uploads/6ceaa8ce-453c-4dd4-b786-17c869bbc6fa.png" 
+                      src="/lovable-uploads/sketch/485652704_669393119076437_85855511625150372_n.jpg"                      
                       alt="Sketch preview" 
                       className="h-full w-full object-cover object-center"
                     />

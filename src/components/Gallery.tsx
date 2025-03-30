@@ -20,7 +20,8 @@ const Gallery = ({ items, category }: GalleryProps) => {
         {filteredItems.map((item) => (
           <div 
             key={item.id} 
-            className="gallery-item"
+            className="gallery-item group"
+            data-orientation={item.width > item.height ? 'landscape' : 'portrait'}
             onClick={() => setSelectedImage(item)}
           >
             <img 

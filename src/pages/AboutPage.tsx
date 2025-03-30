@@ -11,7 +11,7 @@ const AboutPage = () => {
       <div className="h-screen relative flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/lovable-uploads/cbca9fda-a185-47c7-b5df-37b0ed5d62ed.png" 
+            src="/lovable-uploads/485083272_1366567581437924_3956986898790989309_n.jpg"
             alt="Background" 
             className="w-full h-full object-cover opacity-20"
           />
@@ -87,10 +87,10 @@ const AboutPage = () => {
               {/* Portfolio preview */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  "/lovable-uploads/c4fb00dc-60df-45f4-98e7-4c4470d9fee4.png",
-                  "/lovable-uploads/90330d0e-9ef9-4173-a73f-6bb7e7a51986.png",
-                  "/lovable-uploads/e5454670-6faa-4efa-b090-1685b9dbd8e2.png",
-                  "/lovable-uploads/6ceaa8ce-453c-4dd4-b786-17c869bbc6fa.png"
+                  "/lovable-uploads/485380124_23886389040959248_6685848319084993930_n.jpg",
+                  "/lovable-uploads/485503713_596287023417347_9113024219148745693_n.jpg",
+                  "/lovable-uploads/485826122_1850320022454072_2149154549007138107_n.jpg",
+                  "/lovable-uploads/486062794_650411307909313_3849816689233517024_n.jpg"
                 ].map((image, index) => (
                   <div 
                     key={index} 
